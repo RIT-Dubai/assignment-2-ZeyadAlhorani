@@ -29,6 +29,9 @@ def quit():
         return False
 
 
+def student_average(string):
+# "stu, filename, firstname, lastname"
+
 
 
 
