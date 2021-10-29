@@ -5,7 +5,7 @@ def main():
     z = quit_x.split(" ")
 
     if quit_x[0] == str("quit"):
-         quit("Y")
+         quit()
          print("Goodbye!")
 
     else:
@@ -19,8 +19,14 @@ def main():
 
 
 def quit():
+    # asks the user if sure or not
     print("Are you sure?")
-    input("If yes enter Y")
+    yes = input("If yes enter Y ")
+    if yes == str("Y"):
+        return True
+    else:
+        return False
+
 
 
 
@@ -29,4 +35,4 @@ def quit():
 
 
 if __name__ == '__main__':
-    main()
+    quit()
