@@ -1,7 +1,12 @@
 
-def quit():
-    yes_no = input("if you are sure enter Y or y ")
-    if (yes_no == str("Y")):
-        print("True")
-    else:
-        print("False")
+def main():
+    quit_x = input("Enter a command or 'quit' to quit. ")
+    try:
+        if quit_x == str("quit"):
+         print("Goodbye!")
+
+         # next function
+        else:
+            print("Failed")
+    except:
+        print("Failed")
