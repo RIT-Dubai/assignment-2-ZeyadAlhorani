@@ -6,12 +6,12 @@ def main():
     command = input(">> ")
     z = command.split()
 
-
+# making sure of the command and implementing the functions
     if (z[0] == "stu"):
-       student_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita'])
+       student_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita', plotter.plot(trace_plot=True)])
 
     if (command == "avg"):
-        print_average()
+        print_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita'])
 
     if (command == "cavg"):
         class_average()
@@ -23,6 +23,7 @@ def main():
          quit()
          print("Goodbye!")
 
+# in case of errors
     else:
         try:
             if z[0] == str("quit"):
@@ -40,7 +41,7 @@ def main():
 
 
 def quit():
-    # asks the user if sure or not
+    # asks the user if sure or not for quitting
     print("Are you sure?")
     yes = input("If yes enter Y:- ")
     if yes == str("Y"):
@@ -50,7 +51,8 @@ def quit():
 
 
 def student_average(stu_string):
-# a_string = "stu, filename, firstname, lastname"
+    # calculates and plots the student average for one only
+    # a_string = "stu, filename, firstname, lastname"
    stu_string = ["stu",r"C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv", "Zeyad", "Bonita", plotter.plot(trace_plot=True)]
    namefile = [1]
    if len(stu_string) != 4:
@@ -59,73 +61,103 @@ def student_average(stu_string):
    if (stu_string[1] == None):
          print("No such file: foo.csv")
 
+# opening and reading the file
    else:
     try:
        with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
         csv_reader = csv.reader(namefile)
-       fisrtname = stu_string[2]
-       lastname = stu_string[3]
-       row = []
-       for row in csv_reader:
+        fisrtname = stu_string[2]
+        lastname = stu_string[3]
+        row = []
+        for row in csv_reader:
            while fisrtname in row:
                if lastname in row:
                    print(row)
                    plotter.init("my graph", "X-axis", "Y-axis")
-    except:
+                   break
 
-     if (stu_string[4] == True):
-       print("“Plot finished (window may be hidden).")
+
+# ending and if there is an error
+    except:
+        return
+     #if (stu_string[4] == True):
+       #print("“Plot finished (window may be hidden).")
      #else:
-       #stu_string[4] == False
+      # stu_string[4] == False
        #print("Plot failed (no such student)")
 
 
-
-
-
 def print_average(avg_string):
+    # only prints the average and not plot it
     avg_string = ["avg","filename", "gradeitem", plotter.plot_point("70", "98", "red")]
 
-    if len(avg_string) != 4:
-       print("Usage: stu <filename> <first name> <last name>")
+    with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
+        csv_reader = csv.reader(namefile)
+        fisrtname = avg_string[1]
+        lastname = avg_string[2]
+        row = []
+        for row in csv_reader:
+           while fisrtname in row:
+               if lastname in row:
+                   print(row)
+                   plotter.init("my graph", "X-axis", "Y-axis")
 
-    try:
-        if (avg_string == True):
-            print("Average:")
-        if (avg_string[0] == None):
-            print("Usage: avg <filename> <grade item>")
-        if (avg_string[1] == None):
-            print("Usage: avg <filename> <grade item>")
-        if (avg_string[2] == None):
-            print("Usage: avg <filename> <grade item>")
+        if len(avg_string) != 3:
+         print("Usage: avg <filename> <grade item>")
 
-        if (avg_string[1] == None):
-            print("No such file: foo.csv")
+         try:
+            if (avg_string == True):
+                print("Average:")
+            if (avg_string[0] == None):
+                print("Usage: avg <filename> <grade item>")
+            if (avg_string[1] == None):
+                print("Usage: avg <filename> <grade item>")
+            if (avg_string[2] == None):
+                print("Usage: avg <filename> <grade item>")
 
-        if (avg_string[2] != int()):
-            print("Grade item must be a number")
+            if (avg_string[1] == None):
+                print("No such file: foo.csv")
 
-    except:
-        return
+            if (avg_string[2] != int()):
+             print("Grade item must be a number")
+
+         except:
+          return
 
 
 def class_average(class_string):
+  # plots multiple averages for multiple students
     class_string = ["cavg", "filename", plotter.plot_data_points(data_points, dot_color, trace_plot=True)]
 
-    try:
-        if (class_string == True):
-            print("Plot is finished (window may be hidden).")
+    with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
+       csv_reader = csv.reader(namefile)
+       fisrtname = class_string[1]
+       lastname = class_string[2]
+    row = []
+    for row in csv_reader:
+           while fisrtname in row:
+               if lastname in row:
+                   print(row)
+                   plotter.init("my graph", "X-axis", "Y-axis")
 
-        if (class_string[0] == False):
-            print("Usage: cavg <filename>")
-        if (class_string[1] == False):
-            print("No such file: foo.csv")
+    if len(class_string) != 2:
+        print("Usage: cavg <filename>")
 
-    except:
-        return
+        try:
+            if (class_string == True):
+                print("Plot is finished (window may be hidden).")
+
+            if (class_string[0] == False):
+                print("Usage: cavg <filename>")
+            if (class_string[1] == False):
+                print("No such file: foo.csv")
+
+        except:
+            return
 
 
 def help():
+    # simply a function to guide the user
     print("stu <filename> <first name> <last name> - plot student grades")
     print("cavg <filename> - plot class average")
     print("avg <filename> <number> - prints the average for the grade item")
