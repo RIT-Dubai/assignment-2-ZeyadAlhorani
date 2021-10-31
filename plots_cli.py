@@ -162,7 +162,7 @@ def help():
     print("cavg <filename> - plot class average")
     print("avg <filename> <number> - prints the average for the grade item")
     print("quit - quits")
-    print("help - displays this message")
+    print("help - displayss this message")
 
 
 
