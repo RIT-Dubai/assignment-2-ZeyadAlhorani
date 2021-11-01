@@ -55,7 +55,7 @@ def quit():
 def student_average(stu_string):
     # calculates and plots the student average for one student only
     # a_string = "stu, filename, firstname, lastname"
-   stu_string = ["stu",r"C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv", "Zeyad", "Bonita", plotter.plot(trace_plot=True)]
+   stu_string = ["stu",r"C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv", "firstname", "lastname", plotter.plot(trace_plot=True)]
    namefile = [1]
    if len(stu_string) != 4:
        print("Usage: stu <filename> <first name> <last name>")
@@ -84,7 +84,7 @@ def student_average(stu_string):
 
 def print_average(avg_string):
     # only prints the average and not plot it
-    avg_string = ["avg","filename", "gradeitem", plotter.plot_point("salam", 3, "red")]
+    avg_string = ["avg","filename", "gradeitem", plotter.plot_point("hello", 3, "red")]
 
     with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
         csv_reader = csv.reader(namefile)
