@@ -16,8 +16,7 @@ def main():
 
 
     if (z[0] == "cavg"):
-        #class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv", plotter.plot(trace_plot=True)])
-        class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv", class_average_calculation()])
+        class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv", class_average_plotting()])
 
     if (z[0] == "help"):
         help()
@@ -126,7 +125,7 @@ def print_average(avg_string):
 
 def class_average(class_string):
   # plots multiple averages for multiple students
-    class_string = ["cavg", "filename", plotter.plot(trace_plot=True)]
+    class_string = ["cavg", "filename", class_average_plotting()]
 
     with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
        csv_reader = csv.reader(namefile)
@@ -183,11 +182,11 @@ def students_average_plotting():
     plotter.add_data_point(95)
     plotter.add_data_point(75)
     plotter.plot(trace_plot=True)
-    input("input anything to exit")
+    input("input anything to exit ")
 
 
 
-def class_average_calculation():
+def class_average_plotting():
     plotter.init("class average in grades", "x-axis","y-axis")
     plotter.add_data_point(13.53)
     plotter.new_series()
@@ -211,6 +210,7 @@ def class_average_calculation():
     plotter.new_series()
     plotter.plot(trace_plot=True)
     input("input anything to exit")
+    print("Plot is finished (window may be hidden).")
 
 
 
