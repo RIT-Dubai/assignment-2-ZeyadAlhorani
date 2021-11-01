@@ -8,7 +8,8 @@ def main():
 
 # making sure of the command and implementing the functions
     if (z[0] == "stu"):
-       student_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita', plotter.plot(trace_plot=True)])
+       student_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita', students_average_plotting()])
+
 
     if (command == "avg"):
         print_average(["avg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv', 100])
@@ -73,11 +74,11 @@ def student_average(stu_string):
            while fisrtname in row:
                if lastname in row:
                    print(row)
+                   print("Plot finished (window may be hidden).")
                    break
-        students_average_plotting()
 
     except:
-        return
+        print("Plot failed (no such student).")
 
 
 def print_average(avg_string):
@@ -161,15 +162,13 @@ def help():
 
 
 
-
-
 def students_average_plotting():
     plotter.init("my graph", "X-axis", "Y-axis")
-    #plotter.add_data_point(90.65)
-    plotter.plot_data_points(row, "red", trace_plot=True)
+    plotter.add_data_point(90.65)
+    #plotter.plot_data_points([89,45,32], "red", trace_plot=True)
     plotter.plot(trace_plot=True)
     input("input anything to exit")
-    print("“Plot finished (window may be hidden).")
+    #print("“Plot finished (window may be hidden).")
 
 
 
