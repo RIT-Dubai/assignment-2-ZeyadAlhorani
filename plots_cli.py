@@ -32,10 +32,11 @@ def main():
                 quit()
                 print("Goodbye!")
 
-            #elif command != str("quit"):
-                #print("   Failed input")
-                #print("   Enter a command or enter 'quit' to quit please: ")
-                #main()
+            else:
+                 command != str("quit")
+                 print("   Failed input")
+                 print("   Enter a command or enter 'quit' to quit please: ")
+
 
         except:
            return
@@ -211,8 +212,6 @@ def class_average_plotting():
     plotter.plot(trace_plot=True)
     input("input anything to exit")
     print("Plot is finished (window may be hidden).")
-
-
 
 
 
