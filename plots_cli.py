@@ -76,7 +76,7 @@ def student_average(stu_string):
                    break
 
         plotter.init("my graph", "X-axis", "Y-axis")
-        plotter.add_data_point(row)
+        plotter.add_data_point([0,82,13.37,28.72,50.00,90.65,11.06,34.43,95,75])
         plotter.plot(trace_plot=True)
         input("input anything to exit")
         print("“Plot finished (window may be hidden).")
