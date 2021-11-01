@@ -87,37 +87,39 @@ def print_average(avg_string):
 
     with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
         csv_reader = csv.reader(namefile)
-        fisrtname = avg_string[1]
-        lastname = avg_string[2]
         average = 0
         sum = 0
         row = 0
         for row in csv_reader:
-           while fisrtname in row:
-               if lastname in row:
-                   print(row)
-                   plotter.init("my graph", "X-axis", "Y-axis")
+            for column in namefile:
+                n = float(column)
+                sum += n
+            row_count += 1
+        average = sum / len(column)
+        return "Average:", average
 
+        print("Usage: avg <filename> <grade item>")
+
+    try:
         if len(avg_string) != 3:
-         print("Usage: avg <filename> <grade item>")
+            print("Usage: avg <filename> <grade item>")
 
-         try:
-            if (avg_string == True):
-                print("Average:")
-            if (avg_string[0] == None):
-                print("Usage: avg <filename> <grade item>")
-            if (avg_string[1] == None):
-                print("Usage: avg <filename> <grade item>")
-            if (avg_string[2] == None):
-                print("Usage: avg <filename> <grade item>")
+        if (avg_string == True):
+            print("Average:")
+        if (avg_string[0] == None):
+            print("Usage: avg <filename> <grade item>")
+        if (avg_string[1] == None):
+            print("Usage: avg <filename> <grade item>")
+        if (avg_string[2] == None):
+            print("Usage: avg <filename> <grade item>")
 
-            if (avg_string[1] == None):
-                print("No such file: foo.csv")
+        if (avg_string[1] == None):
+             print("No such file: foo.csv")
 
-            if (avg_string[2] != int()):
-             print("Grade item must be a number")
+        if (avg_string[2] != int()):
+            print("Grade item must be a number")
 
-         except:
+    except:
           return
 
 
