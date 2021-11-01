@@ -171,6 +171,7 @@ def students_average_plotting():
     #print("“Plot finished (window may be hidden).")
 
 
+def print_average_calculation():
 
 
 
