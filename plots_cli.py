@@ -164,14 +164,27 @@ def help():
 
 def students_average_plotting():
     plotter.init("my graph", "X-axis", "Y-axis")
+    plotter.add_data_point(0.00)
+    plotter.add_data_point(82)
+    plotter.add_data_point(13.37)
+    plotter.add_data_point(28.72)
+    plotter.add_data_point(50.00)
     plotter.add_data_point(90.65)
-    #plotter.plot_data_points([89,45,32], "red", trace_plot=True)
+    plotter.add_data_point(11.06)
+    plotter.add_data_point(34.43)
+    plotter.add_data_point(95)
+    plotter.add_data_point(75)
     plotter.plot(trace_plot=True)
     input("input anything to exit")
-    #print("“Plot finished (window may be hidden).")
+
 
 
 def print_average_calculation():
+    plotter.init("my graph", "x-axis","y-axis")
+    plotter.plot(trace_plot=True)
+    input("input anything to exit")
+
+
 
 
 
