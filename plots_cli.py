@@ -8,7 +8,7 @@ def main():
 
 # making sure of the command and implementing the functions
     if (z[0] == "stu"):
-       student_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita'])
+       student_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita',])
 
     if (command == "avg"):
         print_average(["avg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv', 100])
