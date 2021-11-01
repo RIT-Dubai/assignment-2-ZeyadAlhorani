@@ -14,7 +14,7 @@ def main():
         print_average(["avg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv', 100])
 
     if (command == "cavg"):
-        class_average()
+        class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv"])
 
     if (command == "help"):
         help()
@@ -73,23 +73,17 @@ def student_average(stu_string):
            while fisrtname in row:
                if lastname in row:
                    print(row)
-                   plotter.init("my graph", "X-axis", "Y-axis")
                    break
-
-
-# ending and if there is an error
-    except:
-        return
-     #if (stu_string[4] == True):
-       #print("“Plot finished (window may be hidden).")
-     #else:
-      # stu_string[4] == False
-       #print("Plot failed (no such student)")
+        plotter.__draw_axis(10,8,"point", right = True)
+        plotter.init("my graph", "X-axis", "Y-axis")
+        plotter.add_data_point(9)
+        input("input anything to exit")
+        print("“Plot finished (window may be hidden).")
 
 
 def print_average(avg_string):
     # only prints the average and not plot it
-    avg_string = ["avg","filename", "gradeitem", plotter.plot_point()]
+    avg_string = ["avg","filename", "gradeitem", plotter.plot_point("salam", 3, "red")]
 
     with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
         csv_reader = csv.reader(namefile)
@@ -131,6 +125,7 @@ def class_average(class_string):
 
     with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
        csv_reader = csv.reader(namefile)
+       print(csv_reader)
        fisrtname = class_string[1]
        lastname = class_string[2]
     row = []
