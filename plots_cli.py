@@ -11,7 +11,7 @@ def main():
        student_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita', plotter.plot(trace_plot=True)])
 
     if (command == "avg"):
-        print_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita'])
+        print_average(["avg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv', 100])
 
     if (command == "cavg"):
         class_average()
@@ -89,7 +89,7 @@ def student_average(stu_string):
 
 def print_average(avg_string):
     # only prints the average and not plot it
-    avg_string = ["avg","filename", "gradeitem", plotter.plot_point("70", "98", "red")]
+    avg_string = ["avg","filename", "gradeitem", plotter.plot_point()]
 
     with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
         csv_reader = csv.reader(namefile)
