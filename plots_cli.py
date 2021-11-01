@@ -77,8 +77,11 @@ def student_average(stu_string):
         plotter.__draw_axis(10,8,"point", right = True)
         plotter.init("my graph", "X-axis", "Y-axis")
         plotter.add_data_point(9)
-        input("input anything to exit")
+        #input("input anything to exit")
         print("“Plot finished (window may be hidden).")
+
+    except:
+        return
 
 
 def print_average(avg_string):
