@@ -14,8 +14,10 @@ def main():
     if (z[0] == "avg"):
         print_average(["avg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv', plotter.plot_data_points(len(70), "red", trace_plot=True)])
 
+
     if (z[0] == "cavg"):
-        class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv", plotter.plot(trace_plot=True)])
+        #class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv", plotter.plot(trace_plot=True)])
+        class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv", class_average_calculation()])
 
     if (z[0] == "help"):
         help()
@@ -137,7 +139,6 @@ def class_average(class_string):
                if lastname in row:
                    print(row)
                    plotter.init("my graph", "X-axis", "Y-axis")
-                   input("d")
 
                else:
                    return
@@ -170,7 +171,7 @@ def help():
 
 
 def students_average_plotting():
-    plotter.init("my graph", "X-axis", "Y-axis")
+    plotter.init("Average of grades for Zeyad Bonita", "X-axis", "Y-axis")
     plotter.add_data_point(0.00)
     plotter.add_data_point(82)
     plotter.add_data_point(13.37)
@@ -187,7 +188,7 @@ def students_average_plotting():
 
 
 def class_average_calculation():
-    plotter.init("my graph", "x-axis","y-axis")
+    plotter.init("class average in grades", "x-axis","y-axis")
     plotter.plot(trace_plot=True)
     input("input anything to exit")
 
