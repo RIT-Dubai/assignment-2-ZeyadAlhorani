@@ -74,12 +74,7 @@ def student_average(stu_string):
                if lastname in row:
                    print(row)
                    break
-        plotter.init("my graph", "X-axis", "Y-axis")
-        plotter.add_data_point(90.65)
-        #plotter.plot_data_points(row, "red", trace_plot=True)
-        plotter.plot(trace_plot=True)
-        input("input anything to exit")
-        print("“Plot finished (window may be hidden).")
+        students_average_plotting()
 
     except:
         return
@@ -164,7 +159,17 @@ def help():
     print("help - displays this message")
 
 
+
+
+
+
 def students_average_plotting():
+    plotter.init("my graph", "X-axis", "Y-axis")
+    plotter.add_data_point(90.65)
+    #plotter.plot_data_points(row, "red", trace_plot=True)
+    plotter.plot(trace_plot=True)
+    input("input anything to exit")
+    print("“Plot finished (window may be hidden).")
 
 
 
