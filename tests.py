@@ -7,10 +7,10 @@ def test_student_average():
     stu_correct = ["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita']
     stu_wrong = ["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zey','bonita'] #wrong student
     assert plots_cli.student_average(stu_correct) == True
-    assert plots_cli.student_average(stu_wrong) == False
+    assert plots_cli.student_average(stu_wrong) == None
 
 
-def test_print_average():
+#def test_print_average():
 # to make sure calculation is correct
 
 def test_class_average():
@@ -18,4 +18,4 @@ def test_class_average():
     cavg_correct = ["cavg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv']
     cavg_wrong = ["cavg",] # no file here
     assert plots_cli.class_average(cavg_correct) == True
-    assert plots_cli.class_average(cavg_wrong) == False
+    assert plots_cli.class_average(cavg_wrong) == None
