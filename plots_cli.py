@@ -3,7 +3,7 @@ import plotter
 
 def main():
 # this funtion will ask the user to quit or not
-    command = input("Enter a command or 'quit' to quit")
+    command = input("Enter a command or 'quit' to quit: ")
     z = command.split()
 
 # making sure of the command and implementing the functions
@@ -12,10 +12,10 @@ def main():
 
 
     if (z[0] == "avg"):
-        print_average(["avg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv', 100])
+        print_average(["avg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv', plotter.plot_data_points(len(70), "red", trace_plot=True)])
 
     if (z[0] == "cavg"):
-        class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv"])
+        class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv", plotter.plot(trace_plot=True)])
 
     if (z[0] == "help"):
         help()
@@ -94,7 +94,6 @@ def print_average(avg_string):
             for column in namefile:
                 n = float(column)
                 sum += n
-            row_count += 1
         average = sum / len(column)
         return "Average:", average
 
@@ -125,34 +124,38 @@ def print_average(avg_string):
 
 def class_average(class_string):
   # plots multiple averages for multiple students
-    class_string = ["cavg", "filename", plotter.plot_data_points(data_points, dot_color, trace_plot=True)]
+    class_string = ["cavg", "filename", plotter.plot(trace_plot=True)]
 
     with open(r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv") as namefile:
        csv_reader = csv.reader(namefile)
        print(csv_reader)
        fisrtname = class_string[1]
        lastname = class_string[2]
-    row = []
-    for row in csv_reader:
-           while fisrtname in row:
+       row = 0
+       for row in csv_reader:
+         while fisrtname in row:
                if lastname in row:
                    print(row)
                    plotter.init("my graph", "X-axis", "Y-axis")
+                   input("d")
 
-    if len(class_string) != 2:
-        print("Usage: cavg <filename>")
+               else:
+                   return
 
-        try:
-            if (class_string == True):
-                print("Plot is finished (window may be hidden).")
 
-            if (class_string[0] == False):
-                print("Usage: cavg <filename>")
-            if (class_string[1] == False):
+
+    try:
+        if (class_string == True):
+             print("Plot is finished (window may be hidden).")
+
+        if (class_string[0] == False):
+             print("Usage: cavg <filename>")
+        if (class_string[1] == False):
                 print("No such file: foo.csv")
 
-        except:
-            return
+    except:
+         if len(class_string) != 2:
+             print("Usage: cavg <filename>")
 
 
 def help():
@@ -183,7 +186,7 @@ def students_average_plotting():
 
 
 
-def print_average_calculation():
+def class_average_calculation():
     plotter.init("my graph", "x-axis","y-axis")
     plotter.plot(trace_plot=True)
     input("input anything to exit")
