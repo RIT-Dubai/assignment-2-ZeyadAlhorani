@@ -89,7 +89,9 @@ def print_average(avg_string):
         csv_reader = csv.reader(namefile)
         fisrtname = avg_string[1]
         lastname = avg_string[2]
-        row = []
+        average = 0
+        sum = 0
+        row = 0
         for row in csv_reader:
            while fisrtname in row:
                if lastname in row:
