@@ -3,7 +3,7 @@ import plotter
 
 def main():
 # this funtion will ask the user to quit or not
-    command = input(">> ")
+    command = input("Enter a command or 'quit' to quit")
     z = command.split()
 
 # making sure of the command and implementing the functions
@@ -11,13 +11,13 @@ def main():
        student_average(["stu",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv','zeyad','bonita', students_average_plotting()])
 
 
-    if (command == "avg"):
+    if (z[0] == "avg"):
         print_average(["avg",r'C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv', 100])
 
-    if (command == "cavg"):
+    if (z[0] == "cavg"):
         class_average(["cavg", r"C:\Users\Zeyad\GCIS.123.600-assignment2-sample.csv"])
 
-    if (command == "help"):
+    if (z[0] == "help"):
         help()
 
     if z[0] == str("quit"):
