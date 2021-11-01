@@ -51,7 +51,7 @@ def quit():
 
 
 def student_average(stu_string):
-    # calculates and plots the student average for one only
+    # calculates and plots the student average for one student only
     # a_string = "stu, filename, firstname, lastname"
    stu_string = ["stu",r"C:\Users\Zeyad\Desktop\GCIS.123.600-assignment2-sample.csv", "Zeyad", "Bonita", plotter.plot(trace_plot=True)]
    namefile = [1]
