@@ -1,10 +1,13 @@
 import plots_cli
 import plotter
 
-def test_quit():
-    yes = input("If yes enter Y:- ")
-    assert ( yes == True)
+
+def test_student_average():
 
 
+def test_print_average():
 
-test_quit()
+
+def test_class_average():
+
+
